@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ゴルフコンペ案内</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Noto+Serif+JP:wght@500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="hero">
+    <p class="eyebrow" id="hero-eyebrow"></p>
+    <h1 id="hero-title"></h1>
+    <p class="subtitle" id="hero-subtitle"></p>
+    <div class="countdown" id="countdown" aria-live="polite"></div>
+    <div class="hero-actions" id="hero-actions"></div>
+  </header>
+
+  <main>
+    <section class="section" id="overview">
+      <h2>大会概要</h2>
+      <dl class="info-grid" id="overview-list"></dl>
+    </section>
+
+    <section class="section" id="weather">
+      <h2>天気</h2>
+      <p class="note" id="weather-text"></p>
+    </section>
+
+    <section class="section" id="groups">
+      <h2>組合せ</h2>
+      <div class="course-grid" id="course-grid"></div>
+    </section>
+
+    <section class="section" id="rules">
+      <h2>競技ルール</h2>
+      <ul class="list" id="rules-list"></ul>
+    </section>
+
+    <section class="section" id="prizes">
+      <h2>賞品</h2>
+      <ul class="list" id="prizes-list"></ul>
+    </section>
+
+    <section class="section" id="venue">
+      <h2>会場・アクセス</h2>
+      <p id="venue-text"></p>
+      <p><a id="venue-map" target="_blank" rel="noopener noreferrer"></a></p>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p id="footer-text"></p>
+  </footer>
+
+  <script src="data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
