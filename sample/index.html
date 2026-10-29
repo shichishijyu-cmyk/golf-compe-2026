@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>第10回記念 遊樂笑の会メインコンペ（サンプル）</title>
+  <meta name="description" content="ゴルフコンペの案内。開催日、組合せ、競技ルール、賞品、会場をご確認いただけます。" />
+  <meta name="theme-color" content="#183b27" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Noto+Serif+JP:wght@500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <nav class="topnav" aria-label="ページ内リンク">
+    <a class="brand" href="#top" id="nav-brand"></a>
+    <ul class="navlinks">
+      <li><a href="#overview">概要</a></li>
+      <li><a href="#groups">組合せ</a></li>
+      <li><a href="#rules">ルール</a></li>
+      <li><a href="#prizes">賞品</a></li>
+      <li><a href="#venue">会場</a></li>
+    </ul>
+  </nav>
+
+  <header class="hero" id="top">
+    <div class="hero-media" aria-hidden="true">
+      <!-- 写真を入れる場合は images/hero.jpg を置くと自動で表示されます -->
+      <div class="hero-photo"></div>
+      <svg class="hero-scene" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMax slice" focusable="false">
+        <defs>
+          <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" stop-color="#1b3a24" />
+            <stop offset="0.55" stop-color="#2f5b38" />
+            <stop offset="1" stop-color="#3f6e45" />
+          </linearGradient>
+          <linearGradient id="fair1" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" stop-color="#5a8a52" />
+            <stop offset="1" stop-color="#3e6a3a" />
+          </linearGradient>
+          <linearGradient id="fair2" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" stop-color="#4b7a46" />
+            <stop offset="1" stop-color="#2f5a2f" />
+          </linearGradient>
+        </defs>
+        <rect width="1600" height="900" fill="url(#sky)" />
+        <circle cx="1260" cy="190" r="70" fill="#c9a84c" opacity="0.35" />
+        <path d="M0 540 Q 260 470 520 520 T 1040 500 T 1600 480 L1600 900 L0 900 Z" fill="#3a6236" opacity="0.8" />
+        <path d="M0 620 Q 300 560 620 610 T 1200 600 T 1600 580 L1600 900 L0 900 Z" fill="url(#fair1)" />
+        <path d="M520 900 Q 700 700 980 650 Q 1180 630 1300 900 Z" fill="url(#fair2)" opacity="0.9" />
+        <g transform="translate(330 0)">
+          <path d="M1010 660 L1010 430" stroke="#f5f4ef" stroke-width="4" />
+          <path d="M1014 430 L1090 452 L1014 474 Z" fill="#c9a84c" />
+          <ellipse cx="1010" cy="662" rx="34" ry="9" fill="#2a4d2c" />
+          <circle cx="1010" cy="662" r="6" fill="#1b3a24" />
+        </g>
+      </svg>
+      <div class="hero-shade"></div>
+    </div>
+
+    <div class="hero-inner">
+      <p class="eyebrow" id="hero-eyebrow"></p>
+      <h1 id="hero-title"></h1>
+      <p class="subtitle" id="hero-subtitle"></p>
+
+      <ul class="meta-chips" id="meta-chips"></ul>
+
+      <div class="countdown" id="countdown" aria-live="polite"></div>
+
+      <div class="hero-actions" id="hero-actions"></div>
+    </div>
+  </header>
+
+  <main>
+    <section class="section" id="overview">
+      <p class="section-no">01</p>
+      <h2>大会概要</h2>
+      <dl class="info-grid" id="overview-list"></dl>
+    </section>
+
+    <section class="section" id="weather">
+      <p class="section-no">02</p>
+      <h2>天気</h2>
+      <p class="note" id="weather-text"></p>
+    </section>
+
+    <section class="section" id="groups">
+      <p class="section-no">03</p>
+      <h2>組合せ</h2>
+      <div class="course-grid" id="course-grid"></div>
+    </section>
+
+    <section class="section" id="rules">
+      <p class="section-no">04</p>
+      <h2>競技ルール</h2>
+      <ul class="list" id="rules-list"></ul>
+    </section>
+
+    <section class="section" id="prizes">
+      <p class="section-no">05</p>
+      <h2>賞品</h2>
+      <ul class="list" id="prizes-list"></ul>
+    </section>
+
+    <section class="section" id="venue">
+      <p class="section-no">06</p>
+      <h2>会場・アクセス</h2>
+      <p id="venue-text"></p>
+      <p><a id="venue-map" target="_blank" rel="noopener noreferrer"></a></p>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p id="footer-text"></p>
+  </footer>
+
+  <script src="data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
