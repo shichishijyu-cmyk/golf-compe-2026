@@ -8,13 +8,22 @@
     return node;
   };
 
-  // 静的な文言
+  // 文言
+  $("nav-brand").textContent = d.navBrand;
   $("hero-eyebrow").textContent = d.eyebrow;
   $("hero-title").textContent = d.title;
   $("hero-subtitle").textContent = d.subtitle;
   $("weather-text").textContent = d.weather;
   $("venue-text").textContent = d.venue.text;
   $("footer-text").textContent = d.footer;
+
+  // ヒーローの要点チップ
+  const chips = $("meta-chips");
+  d.meta.forEach(([k, v]) => {
+    const li = el("li");
+    li.append(el("strong", {}, k), document.createTextNode(v));
+    chips.append(li);
+  });
 
   // 概要
   const overview = $("overview-list");
@@ -71,19 +80,28 @@
     actions.append(wrap);
   });
 
-  // カウントダウン
+  // カウントダウン（日・時・分）
   const target = new Date(d.startAt).getTime();
   const cd = $("countdown");
+  const unit = (num, label) => {
+    const u = el("div", { class: "cd-unit" });
+    u.append(el("span", { class: "cd-num" }, String(num).padStart(2, "0")), el("span", { class: "cd-label" }, label));
+    return u;
+  };
+  const render = (days, hours, mins) => {
+    cd.replaceChildren(unit(days, "DAYS"), unit(hours, "HOURS"), unit(mins, "MINUTES"));
+  };
   const tick = () => {
     const diff = target - Date.now();
     if (diff <= 0) {
-      cd.textContent = "本日開催です";
+      cd.replaceChildren(el("span", { class: "countdown-text" }, "本日開催です"));
       return;
     }
-    const days = Math.floor(diff / 86400000);
-    const hours = Math.floor((diff % 86400000) / 3600000);
-    const mins = Math.floor((diff % 3600000) / 60000);
-    cd.textContent = `開催まで あと ${days}日 ${hours}時間 ${mins}分`;
+    render(
+      Math.floor(diff / 86400000),
+      Math.floor((diff % 86400000) / 3600000),
+      Math.floor((diff % 3600000) / 60000)
+    );
   };
   tick();
   setInterval(tick, 30000);
