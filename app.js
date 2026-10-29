@@ -110,10 +110,23 @@
     );
     return true;
   };
-  // 秒単位で更新する（開催時刻を過ぎたら止める）
-  if (tick()) {
-    const timer = setInterval(() => {
-      if (!tick()) clearInterval(timer);
-    }, 1000);
+  // 開催日の終わり（JST の翌日 0:00）。ここを過ぎたら「開催済み」にして更新を止める。
+  const dayEnd = new Date(`${d.startAt.slice(0, 10)}T00:00:00+09:00`).getTime() + 86400000;
+  const showEnded = () => {
+    cd.replaceChildren(el("span", { class: "countdown-text" }, "開催済み"));
+  };
+  const timer = setInterval(() => {
+    if (Date.now() >= dayEnd) {
+      showEnded();
+      clearInterval(timer);
+      return;
+    }
+    tick();
+  }, 1000);
+  if (Date.now() >= dayEnd) {
+    showEnded();
+    clearInterval(timer);
+  } else {
+    tick();
   }
 })();
