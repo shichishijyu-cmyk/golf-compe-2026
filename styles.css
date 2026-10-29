@@ -116,17 +116,25 @@ a { color: var(--forest); }
 .hero h1 {
   font-family: var(--serif);
   font-weight: 700;
-  font-size: clamp(32px, 7vw, 60px);
-  line-height: 1.25;
+  font-size: clamp(30px, 6.4vw, 60px);
+  line-height: 1.35;
   letter-spacing: 0.02em;
-  margin: 0 0 16px;
+  margin: 0 auto 18px;
+  max-width: 16em;
+  text-wrap: balance;
+  word-break: keep-all;
+  line-break: strict;
   text-shadow: 0 2px 24px rgba(0, 0, 0, 0.35);
 }
 .subtitle {
   margin: 0 auto 28px;
-  max-width: 540px;
+  max-width: 36em;
   font-size: 15px;
+  line-height: 1.9;
   opacity: 0.92;
+  text-wrap: balance;
+  word-break: keep-all;
+  line-break: strict;
 }
 
 .meta-chips {

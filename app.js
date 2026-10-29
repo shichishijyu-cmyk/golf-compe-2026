@@ -88,21 +88,32 @@
     u.append(el("span", { class: "cd-num" }, String(num).padStart(2, "0")), el("span", { class: "cd-label" }, label));
     return u;
   };
-  const render = (days, hours, mins) => {
-    cd.replaceChildren(unit(days, "DAYS"), unit(hours, "HOURS"), unit(mins, "MINUTES"));
+  const render = (days, hours, mins, secs) => {
+    cd.replaceChildren(
+      unit(days, "DAYS"),
+      unit(hours, "HOURS"),
+      unit(mins, "MINUTES"),
+      unit(secs, "SECONDS")
+    );
   };
   const tick = () => {
     const diff = target - Date.now();
     if (diff <= 0) {
       cd.replaceChildren(el("span", { class: "countdown-text" }, "本日開催です"));
-      return;
+      return false;
     }
     render(
       Math.floor(diff / 86400000),
       Math.floor((diff % 86400000) / 3600000),
-      Math.floor((diff % 3600000) / 60000)
+      Math.floor((diff % 3600000) / 60000),
+      Math.floor((diff % 60000) / 1000)
     );
+    return true;
   };
-  tick();
-  setInterval(tick, 30000);
+  // 秒単位で更新する（開催時刻を過ぎたら止める）
+  if (tick()) {
+    const timer = setInterval(() => {
+      if (!tick()) clearInterval(timer);
+    }, 1000);
+  }
 })();
