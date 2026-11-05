@@ -58,5 +58,5 @@ const TOURNAMENT = {
     { label: "出欠を回答する", url: null, note: "回答期限：○月○日" },
     { label: "プレーの動画を投稿する", url: null, note: "思い出のビデオをプレゼントします" },
   ],
-  footer: "※これはサンプルです。 © 遊樂笑の会",
+  footer: "© 遊樂笑の会",
 };
