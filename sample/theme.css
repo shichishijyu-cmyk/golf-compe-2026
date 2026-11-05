@@ -1,0 +1,205 @@
+/* 参考サイトの配色・余白に合わせる上書き（サンプル版のみ） */
+:root {
+  --forest: #183b27;
+  --forest-deep: #0c2416;
+  --forest-soft: #28553a;
+  --gold: #c9a84c;
+  --gold-light: #e5d28b;
+  --ink: #223029;
+  --paper: #f7f6f1;
+  --line: #e1e2d9;
+  --muted: #79827b;
+  --offwhite: #f7f6f1;
+}
+
+body {
+  background: var(--paper);
+  color: var(--ink);
+  line-height: 1.9;
+}
+
+/* ---------- ナビ ---------- */
+.topnav {
+  background: rgba(12, 36, 22, 0.94);
+  border-bottom: 1px solid rgba(201, 168, 76, 0.35);
+}
+
+/* ---------- ヒーロー ---------- */
+.hero {
+  min-height: 760px;
+  background: radial-gradient(ellipse at 50% 30%, #1f4a30 0%, var(--forest-deep) 70%);
+  border-bottom: 0;
+}
+.hero-inner {
+  padding: 100px 24px 88px;
+}
+.eyebrow {
+  color: var(--gold-light);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  margin: 0 0 22px;
+  padding: 0;
+  border: 0;
+}
+.hero h1 {
+  font-size: clamp(30px, 5.6vw, 54px);
+  font-weight: 700;
+  line-height: 1.4;
+  letter-spacing: 0.03em;
+}
+.hero h1::after {
+  content: "";
+  display: block;
+  width: 62px;
+  height: 2px;
+  margin: 26px auto 18px;
+  background: var(--gold);
+}
+.subtitle {
+  font-size: 14px;
+  line-height: 2;
+  opacity: 0.9;
+}
+.meta-chips {
+  gap: 10px;
+  font-size: 13px;
+  margin-top: 28px;
+}
+.meta-chips li {
+  background: rgba(12, 36, 22, 0.5);
+  border: 1px solid rgba(229, 210, 139, 0.5);
+}
+.meta-chips strong {
+  color: var(--gold-light);
+}
+.cd-unit {
+  background: rgba(247, 246, 241, 0.06);
+  border: 1px solid rgba(229, 210, 139, 0.45);
+}
+.cd-num {
+  color: var(--gold-light);
+}
+.cd-label {
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  opacity: 0.7;
+}
+.btn {
+  background: var(--gold);
+  color: var(--forest-deep);
+}
+.btn:hover {
+  background: var(--gold-light);
+}
+.btn.btn-disabled {
+  background: transparent;
+  color: var(--gold-light);
+  border: 1px dashed rgba(229, 210, 139, 0.6);
+}
+
+/* ---------- 本文：中央揃えの見出しと広い余白 ---------- */
+main {
+  max-width: none;
+  padding: 0;
+}
+.section {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 88px 24px 80px;
+  background: transparent;
+  border: 0;
+  border-bottom: 1px solid var(--line);
+  box-shadow: none;
+  text-align: center;
+}
+.section:last-of-type {
+  border-bottom: 0;
+}
+.section::before {
+  display: none;
+}
+.section-no {
+  color: var(--gold);
+  font-size: 11px;
+  letter-spacing: 0.25em;
+  margin: 0 0 10px;
+}
+.section h2 {
+  font-size: 28px;
+  color: var(--forest);
+  margin: 0 0 40px;
+}
+.section h2::after {
+  content: "";
+  display: block;
+  width: 40px;
+  height: 2px;
+  margin: 16px auto 0;
+  background: var(--gold);
+}
+.note {
+  text-align: center;
+}
+.info-grid {
+  text-align: left;
+  max-width: 640px;
+  margin: 0 auto;
+}
+.info-grid dt,
+.info-grid dd {
+  border-top-color: var(--line);
+}
+.course-grid {
+  text-align: left;
+}
+.course-card {
+  background: #fff;
+  border: 1px solid var(--line);
+  box-shadow: 0 6px 20px -16px rgba(12, 36, 22, 0.35);
+}
+.course-card h3 {
+  color: var(--forest);
+}
+.group-row {
+  border-top-color: var(--line);
+}
+.list {
+  display: inline-block;
+  text-align: left;
+  max-width: 640px;
+}
+#venue-text {
+  color: var(--ink);
+}
+#venue-map {
+  color: var(--forest);
+  border-bottom: 1px solid var(--gold);
+  text-decoration: none;
+}
+
+.footer {
+  background: var(--forest-deep);
+  color: rgba(247, 246, 241, 0.75);
+  border-top: 0;
+  margin-top: 0;
+}
+
+/* ---------- スマートフォン ---------- */
+@media (max-width: 600px) {
+  .hero {
+    min-height: 690px;
+  }
+  .hero-inner {
+    padding: 80px 18px 64px;
+  }
+  .section {
+    padding: 64px 18px 56px;
+  }
+  .section h2 {
+    font-size: 24px;
+  }
+  .list {
+    display: block;
+  }
+}
