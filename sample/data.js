@@ -11,7 +11,7 @@ const TOURNAMENT = {
   meta: [
     ["開催日", "11月12日（木）"],
     ["スタート", "08:00〜（仮）"],
-    ["参加", "8 名（仮）"],
+    ["参加", "28 名"],
   ],
   navBrand: "遊樂笑の会",
   overview: [
@@ -19,24 +19,22 @@ const TOURNAMENT = {
     ["開催日", "2026年11月12日（木）"],
     ["スタート", "08:00 〜（仮・組ごとの時刻は組合せを参照）"],
     ["会場", "（会場名を入力）"],
-    ["参加人数", "合計 8 名（仮）"],
+    ["参加人数", "合計 28 名"],
   ],
   weather: "天気は開催前日に更新します。（自動取得は未実装です）",
+  // 組合せ（確定・敬称略）。時刻は未定のため空欄にしています。
   courses: [
     {
-      name: "北 → 西",
-      label: "NORTH TO WEST",
+      name: "組合せ",
+      label: "PAIRINGS",
       groups: [
-        { number: 1, time: "08:00", members: ["参加者A", "参加者B"] },
-        { number: 2, time: "08:10", members: ["参加者C", "参加者D"] },
-      ],
-    },
-    {
-      name: "東 → 南",
-      label: "EAST TO SOUTH",
-      groups: [
-        { number: 3, time: "08:20", members: ["参加者E", "参加者F"] },
-        { number: 4, time: "08:30", members: ["参加者G", "参加者H"] },
+        { number: 1, time: "", members: ["猪俣", "長沼", "入沢", "松本"] },
+        { number: 2, time: "", members: ["仲宗根", "空", "髙木", "小島"] },
+        { number: 3, time: "", members: ["大宮", "坂口", "渡邊", "高山"] },
+        { number: 4, time: "", members: ["大畠", "秋吉", "井上恭", "高野"] },
+        { number: 5, time: "", members: ["山内", "林", "野中", "井上司"] },
+        { number: 6, time: "", members: ["横浜美", "浦田", "田村", "住吉"] },
+        { number: 7, time: "", members: ["新富", "横浜宏", "荒木", "渡辺"] },
       ],
     },
   ],
