@@ -4,56 +4,52 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>第10回記念 遊樂笑の会メインコンペ（サンプル）</title>
-  <meta name="description" content="ゴルフコンペの案内。開催日、組合せ、競技ルール、賞品、会場をご確認いただけます。" />
-  <meta name="theme-color" content="#183b27" />
+  <meta name="description" content="第10回記念 遊樂笑の会メインコンペのご案内。開催概要・組合せ・ルール・会場をご確認いただけます。" />
+  <meta name="theme-color" content="#0c2416" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Noto+Serif+JP:wght@500;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="styles.css" />
-  <link rel="stylesheet" href="theme.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;600;700&family=Noto+Serif+JP:wght@500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="design.css" />
 </head>
 <body>
   <nav class="topnav" aria-label="ページ内リンク">
     <a class="brand" href="#top" id="nav-brand"></a>
     <ul class="navlinks">
       <li><a href="#overview">概要</a></li>
+      <li><a href="#weather">天気</a></li>
       <li><a href="#groups">組合せ</a></li>
       <li><a href="#rules">ルール</a></li>
       <li><a href="#prizes">賞品</a></li>
+      <li><a href="#dinner">表彰式</a></li>
       <li><a href="#venue">会場</a></li>
     </ul>
   </nav>
 
   <header class="hero" id="top">
     <div class="hero-media" aria-hidden="true">
-      <!-- 写真を入れる場合は images/hero.jpg を置くと自動で表示されます -->
+      <!-- 写真は images/hero.jpg を置くと背景に表示されます（無い間は風景のイラスト） -->
       <div class="hero-photo"></div>
-      <svg class="hero-scene" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMax slice" focusable="false">
+      <svg class="hero-scene" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice" focusable="false">
         <defs>
           <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
-            <stop offset="0" stop-color="#1b3a24" />
-            <stop offset="0.55" stop-color="#2f5b38" />
-            <stop offset="1" stop-color="#3f6e45" />
+            <stop offset="0" stop-color="#0c2416" />
+            <stop offset="0.6" stop-color="#1f4a30" />
+            <stop offset="1" stop-color="#2d5e3c" />
           </linearGradient>
           <linearGradient id="fair1" x1="0" y1="0" x2="0" y2="1">
-            <stop offset="0" stop-color="#5a8a52" />
-            <stop offset="1" stop-color="#3e6a3a" />
-          </linearGradient>
-          <linearGradient id="fair2" x1="0" y1="0" x2="0" y2="1">
-            <stop offset="0" stop-color="#4b7a46" />
-            <stop offset="1" stop-color="#2f5a2f" />
+            <stop offset="0" stop-color="#4f7d4b" />
+            <stop offset="1" stop-color="#2b5530" />
           </linearGradient>
         </defs>
         <rect width="1600" height="900" fill="url(#sky)" />
-        <circle cx="1260" cy="190" r="70" fill="#c9a84c" opacity="0.35" />
-        <path d="M0 540 Q 260 470 520 520 T 1040 500 T 1600 480 L1600 900 L0 900 Z" fill="#3a6236" opacity="0.8" />
-        <path d="M0 620 Q 300 560 620 610 T 1200 600 T 1600 580 L1600 900 L0 900 Z" fill="url(#fair1)" />
-        <path d="M520 900 Q 700 700 980 650 Q 1180 630 1300 900 Z" fill="url(#fair2)" opacity="0.9" />
-        <g transform="translate(330 0)">
-          <path d="M1010 660 L1010 430" stroke="#f5f4ef" stroke-width="4" />
+        <circle cx="1280" cy="200" r="90" fill="#e5d28b" opacity="0.22" />
+        <path d="M0 520 Q 300 440 600 500 T 1200 480 T 1600 460 L1600 900 L0 900 Z" fill="#2e5b36" opacity="0.8" />
+        <path d="M0 620 Q 360 560 720 610 T 1400 590 T 1600 580 L1600 900 L0 900 Z" fill="url(#fair1)" />
+        <g transform="translate(560 0)">
+          <path d="M1010 660 L1010 430" stroke="#f7f6f1" stroke-width="4" />
           <path d="M1014 430 L1090 452 L1014 474 Z" fill="#c9a84c" />
-          <ellipse cx="1010" cy="662" rx="34" ry="9" fill="#2a4d2c" />
-          <circle cx="1010" cy="662" r="6" fill="#1b3a24" />
+          <ellipse cx="1010" cy="662" rx="34" ry="9" fill="#1f4a30" />
+          <circle cx="1010" cy="662" r="6" fill="#0c2416" />
         </g>
       </svg>
       <div class="hero-shade"></div>
@@ -66,56 +62,107 @@
 
       <ul class="meta-chips" id="meta-chips"></ul>
 
+      <p class="count-label">開催まで</p>
       <div class="countdown" id="countdown" aria-live="polite"></div>
 
       <div class="hero-actions" id="hero-actions"></div>
     </div>
+    <p class="scroll-cue" aria-hidden="true">SCROLL</p>
   </header>
 
   <main>
-    <section class="section" id="overview">
-      <p class="section-no">01</p>
-      <h2>大会概要</h2>
-      <dl class="info-grid" id="overview-list"></dl>
+    <section class="block block-light" id="overview">
+      <div class="wrap">
+        <p class="kicker">EVENT OVERVIEW</p>
+        <h2>開催概要</h2>
+        <div class="card-grid" id="overview-cards"></div>
+      </div>
     </section>
 
-    <section class="section" id="weather">
-      <p class="section-no">02</p>
-      <h2>天気</h2>
-      <p class="note" id="weather-text"></p>
+    <section class="block block-white" id="weather">
+      <div class="wrap">
+        <p class="kicker">WEATHER</p>
+        <h2>開催地の天気</h2>
+        <p class="lead" id="weather-text"></p>
+      </div>
     </section>
 
-    <section class="section" id="groups">
-      <p class="section-no">03</p>
-      <h2>組合せ</h2>
-      <div class="course-grid" id="course-grid"></div>
+    <section class="block block-light" id="flow">
+      <div class="wrap">
+        <p class="kicker">TIMETABLE</p>
+        <h2>当日の流れ</h2>
+        <ol class="timeline" id="timeline"></ol>
+      </div>
     </section>
 
-    <section class="section" id="rules">
-      <p class="section-no">04</p>
-      <h2>競技ルール</h2>
-      <ul class="list" id="rules-list"></ul>
+    <section class="block block-dark" id="groups">
+      <div class="wrap">
+        <p class="kicker">PAIRINGS</p>
+        <h2>組合せ</h2>
+        <div class="group-grid" id="group-grid"></div>
+        <p class="total" id="group-total"></p>
+      </div>
     </section>
 
-    <section class="section" id="prizes">
-      <p class="section-no">05</p>
-      <h2>賞品</h2>
-      <ul class="list" id="prizes-list"></ul>
+    <section class="block block-white" id="rules">
+      <div class="wrap">
+        <p class="kicker">RULES</p>
+        <h2>競技ルール</h2>
+        <ol class="numbered" id="rules-list"></ol>
+      </div>
     </section>
 
-    <section class="section" id="venue">
-      <p class="section-no">06</p>
-      <h2>会場・アクセス</h2>
-      <p id="venue-text"></p>
-      <p><a id="venue-map" target="_blank" rel="noopener noreferrer"></a></p>
+    <section class="block block-light" id="prizes">
+      <div class="wrap">
+        <p class="kicker">PRIZES</p>
+        <h2>賞品</h2>
+        <ul class="prize-grid" id="prizes-list"></ul>
+      </div>
+    </section>
+
+    <section class="block block-white" id="dinner">
+      <div class="wrap">
+        <p class="kicker">AWARDS &amp; DINNER</p>
+        <h2>表彰式・懇親会のご案内</h2>
+        <div class="dinner-card">
+          <div class="dinner-main">
+            <p class="dinner-label">会場</p>
+            <p class="dinner-name" id="dinner-name"></p>
+            <p class="dinner-note">会費・詳細は後日掲載します</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="block block-cta" id="cta">
+      <div class="wrap center">
+        <p class="kicker">SEE YOU THERE</p>
+        <h2>たくさんの参加を<br />お待ちしています</h2>
+        <div class="hero-actions" id="cta-actions"></div>
+      </div>
+    </section>
+
+    <section class="block block-photo" id="venue">
+      <div class="wrap">
+        <p class="kicker">ACCESS</p>
+        <h2>会場・アクセス</h2>
+        <div class="venue-card">
+          <p class="venue-label">競技会場</p>
+          <p class="venue-name" id="venue-name"></p>
+          <p class="venue-label">表彰式・懇親会</p>
+          <p class="venue-name" id="venue-dinner"></p>
+          <p class="venue-map"><a id="venue-map" target="_blank" rel="noopener noreferrer"></a></p>
+        </div>
+      </div>
     </section>
   </main>
 
   <footer class="footer">
+    <p class="footer-brand" id="footer-brand"></p>
     <p id="footer-text"></p>
   </footer>
 
   <script src="data.js"></script>
-  <script src="app.js"></script>
+  <script src="main.js"></script>
 </body>
 </html>
